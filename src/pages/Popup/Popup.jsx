@@ -11,13 +11,8 @@ const Popup = () => {
         <p>
           Edit <code>src/pages/Popup/Popup.jsx</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React!
+        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
+          <span className="text-2xl text-purple-200 "> Welcome to Tellit</span>
         </a>
       </header>
     </div>

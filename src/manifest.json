@@ -1,22 +1,25 @@
 {
   "manifest_version": 3,
-  "name": "Chrome Extension with React & Webpack",
-  "description": "A chrome extension boilerplate built with React 17, Webpack 5, and Webpack Dev Server 4",
+  "name": "tellit",
+  "description": "Supercharged ChatGPT prompt extension for Chrome",
   "options_page": "options.html",
   "background": { "service_worker": "background.bundle.js" },
   "action": {
-    "default_popup": "popup.html",
+    "default_title": "tellit",
     "default_icon": "icon-34.png"
   },
-  "chrome_url_overrides": {
-    "newtab": "newtab.html"
-  },
+  "permissions": ["tabs"],
+
   "icons": {
     "128": "icon-128.png"
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
+      "matches": [
+        "*://chat.openai.com/*",
+        "*://app.gpt-3.com/*",
+        "*://chat.openai.com/*/*"
+      ],
       "js": ["contentScript.bundle.js"],
       "css": ["content.styles.css"]
     }
@@ -25,7 +28,7 @@
   "web_accessible_resources": [
     {
       "resources": ["content.styles.css", "icon-128.png", "icon-34.png"],
-      "matches": []
+      "matches": ["<all_urls>"]
     }
   ]
 }
